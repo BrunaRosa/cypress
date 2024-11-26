@@ -8,12 +8,7 @@ describe('Valida cenários de Login', () => {
   })
 
   it('Deve logar com sucesso', () => {
-    //Adiciona os dados
-    cy.get('[data-cy="email"]').type('papito@cyskills.com.br')
-    cy.get('[data-cy="password"]').type('showtime')
-
-    //Envia os dados
-    cy.get('[data-cy="login-button"]').click()
+    cy.login('papito@cyskills.com.br', 'showtime')
 
     // Valida página de Bem vindo
     cy.get('[data-cy="welcome-title"]')
@@ -26,54 +21,22 @@ describe('Valida cenários de Login', () => {
   })
 
   it('Não deve logar com sucesso ao enviar email incorreto', () => {
-    //Adiciona os dados
-    cy.get('[data-cy="email"]').type('papi@cyskills.com.br')
-    cy.get('[data-cy="password"]').type('showtime')
-
-    //Envia os dados
-    cy.get('[data-cy="login-button"]').click()
-
-    cy.get('.notice p')
-      .should('be.visible')
-      .and('have.text','E-mail ou senha incorretos. Por favor, tente novamente!')
+    cy.login('papi@cyskills.com.br', 'showtime')
+    cy.messageValidateLogin('E-mail ou senha incorretos. Por favor, tente novamente!')
   })
 
   it('Não deve logar com sucesso ao enviar email não cadastrado', () => {
-    //Adiciona os dados
-    cy.get('[data-cy="email"]').type('404@cyskills.com.br')
-    cy.get('[data-cy="password"]').type('showtime')
-
-    //Envia os dados
-    cy.get('[data-cy="login-button"]').click()
-
-    cy.get('.notice p')
-      .should('be.visible')
-      .and('have.text','E-mail ou senha incorretos. Por favor, tente novamente!')
+    cy.login('404@cyskills.com.br', 'showtime')
+    cy.messageValidateLogin('E-mail ou senha incorretos. Por favor, tente novamente!')
   })
 
   it('Não deve logar com sucesso ao enviar senha incorreta', () => {
-    //Adiciona os dados
-    cy.get('[data-cy="email"]').type('papito@cyskills.com.br')
-    cy.get('[data-cy="password"]').type('54898954')
-
-    //Envia os dados
-    cy.get('[data-cy="login-button"]').click()
-
-    cy.get('.notice p')
-      .should('be.visible')
-      .and('have.text','E-mail ou senha incorretos. Por favor, tente novamente!')
+    cy.login('papito@cyskills.com.br', '54898954')
+    cy.messageValidateLogin('E-mail ou senha incorretos. Por favor, tente novamente!')
   })
 
   it('Não deve logar com sucesso ao enviar senha com menos de 6 caracteres', () => {
-    //Adiciona os dados
-    cy.get('[data-cy="email"]').type('papito@cyskills.com.br')
-    cy.get('[data-cy="password"]').type('show')
-
-    //Envia os dados
-    cy.get('[data-cy="login-button"]').click()
-
-    cy.get('.notice p')
-      .should('be.visible')
-      .and('have.text','A senha precisa ter pelo menos 6 caracteres. Vamos tentar de novo!')
+    cy.login('papito@cyskills.com.br', 'show')
+    cy.messageValidateLogin('A senha precisa ter pelo menos 6 caracteres. Vamos tentar de novo!')
   })
 })
