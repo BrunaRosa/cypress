@@ -1,0 +1,10 @@
+{
+  "name": "playground",
+  "packageManager": "yarn@4.5.1",
+  "scripts": {
+    "e2e:chrome": "cypress run --browser chrome"
+  },
+  "devDependencies": {
+    "cypress": "^13.15.1"
+  }
+}
