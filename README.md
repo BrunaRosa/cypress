@@ -54,7 +54,7 @@ Agradecemos às seguintes pessoas que contribuíram para este projeto:
       <a href="#" title="Linkedin">
         <img src="https://www.linkedin.com/in/bruna-rosa-qa/"
         <sub>
-          <b>Iuri Silva</b>
+          <b>Bruna Rosa</b>
         </sub>
       </a>
     </td>
