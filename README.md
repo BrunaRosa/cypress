@@ -21,7 +21,7 @@ npm install
 ou 
 
 ```
-yarn intall
+yarn install
 ```
 
 ## ☕ Usando o <Playground>
