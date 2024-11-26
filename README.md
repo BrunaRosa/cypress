@@ -11,7 +11,7 @@ Antes de começar, verifique se você atendeu aos seguintes requisitos:
 - Instale a versão mais recente de `Node.js`, `npm` ou `yarn`
 
 
-## 🚀 Instalando <Playground>
+## 🚀 Instalando o Playground
 
 Para instalar o projeto, siga estas etapas:
 
@@ -24,7 +24,7 @@ ou
 yarn install
 ```
 
-## ☕ Usando o <Playground>
+## ☕ Usando o Playground
 
 Para usar projeto, siga estas etapas:
 
