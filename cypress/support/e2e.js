@@ -14,6 +14,10 @@
 // ***********************************************************
 
 // Import commands.js using ES2015 syntax:
+import './e2e'
+import './commons/menu'
+import './commons/buttons'
+import './inputs'
 import './login'
 
 // Alternatively you can use CommonJS syntax:
