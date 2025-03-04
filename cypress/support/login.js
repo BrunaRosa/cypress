@@ -7,7 +7,6 @@ Cypress.Commands.add('acessLoginPage', () => {
 })
 
 Cypress.Commands.add('login', (email, password) => { 
-
   if (email){
     cy.get('[data-cy="email"]').type(email)
   }
@@ -17,12 +16,10 @@ Cypress.Commands.add('login', (email, password) => {
   }
 })
 
-
 Cypress.Commands.add('doLogin', () => { 
   cy.login("papito@cyskills.com.br", "showtime");
   cy.clickButtonLogin();
 })
-
 
 Cypress.Commands.add('userLoggedIn', () => { 
   cy.get('[data-cy="welcome-title"]')

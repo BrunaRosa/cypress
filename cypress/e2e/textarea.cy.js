@@ -6,7 +6,6 @@ describe("TextArea", () => {
 
   it("Deve preencher os campos de text area", () => {
     cy.userLoggedIn();
-
     cy.accessMenu("/textarea", "Textarea");
 
     cy

@@ -54,6 +54,7 @@ describe("Valida cenários de Login", () => {
 
   it("Não deve logar com sucesso ao enviar senha em branco", () => {
     cy.login("papito@cyskills.com.br", "");
+
     cy.clickButtonLogin();
     cy.messageValidateLogin("Por favor, digite sua senha para continuar.");
   });
