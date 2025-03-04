@@ -4,8 +4,7 @@ describe("Valida cenários de Login", () => {
   });
 
   it("Deve logar com sucesso", () => {
-    cy.login("papito@cyskills.com.br", "showtime");
-    cy.clickButtonLogin();
+    cy.doLogin()
 
     cy.get('[data-cy="welcome-text"]')
       .should("be.visible")
@@ -48,13 +47,14 @@ describe("Valida cenários de Login", () => {
   });
 
   it("Não deve logar com sucesso ao enviar email em branco", () => {
-    cy.login("{backspace}", "showtime");
+    cy.login("", "showtime");
     cy.clickButtonLogin();
     cy.messageValidateLogin("Parece que você esqueceu de informar seu e-mail.");
   });
 
-  it("Não deve logar com sucesso ao enviar em branco", () => {
-    cy.login("papito@cyskills.com.br", "{backspace}");
+  it("Não deve logar com sucesso ao enviar senha em branco", () => {
+    cy.login("papito@cyskills.com.br", "");
+
     cy.clickButtonLogin();
     cy.messageValidateLogin("Por favor, digite sua senha para continuar.");
   });
