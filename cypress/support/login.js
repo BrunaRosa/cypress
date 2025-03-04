@@ -7,8 +7,14 @@ Cypress.Commands.add('acessLoginPage', () => {
 })
 
 Cypress.Commands.add('login', (email, password) => { 
-  cy.get('[data-cy="email"]').type(email)
-  cy.get('[data-cy="password"]').type(password)
+
+  if (email){
+    cy.get('[data-cy="email"]').type(email)
+  }
+
+  if (password){
+    cy.get('[data-cy="password"]').type(password)
+  }
 })
 
 Cypress.Commands.add('userLoggedIn', () => { 
