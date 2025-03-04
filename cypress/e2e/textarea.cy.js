@@ -1,11 +1,10 @@
 describe("TextArea", () => {
   beforeEach(() => {
     cy.acessLoginPage();
+    cy.doLogin()
   });
 
   it("Deve preencher os campos de text area", () => {
-    cy.login("papito@cyskills.com.br", "showtime");
-    cy.clickButtonLogin();
     cy.userLoggedIn();
 
     cy.accessMenu("/textarea", "Textarea");

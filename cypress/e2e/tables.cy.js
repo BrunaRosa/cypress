@@ -1,9 +1,7 @@
 describe("Tables", () => {
     beforeEach(() => {
       cy.acessLoginPage();
-  
-      cy.login("papito@cyskills.com.br", "showtime");
-      cy.clickButtonLogin();
+      cy.doLogin()
       cy.userLoggedIn();
   
       cy.accessMenu("/tables", "Tables");

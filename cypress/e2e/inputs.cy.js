@@ -1,11 +1,10 @@
 describe("Inputs", () => {
   beforeEach(() => {
     cy.acessLoginPage();
+    cy.doLogin()
   });
   
   it("Deve preencher os campos de textos com dados válidos", () => {
-    cy.login("papito@cyskills.com.br", "showtime");
-    cy.clickButtonLogin();
     cy.userLoggedIn();
 
     cy.accessMenu("/input-fields", "Input Fields");

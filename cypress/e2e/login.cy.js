@@ -4,8 +4,7 @@ describe("Valida cenários de Login", () => {
   });
 
   it("Deve logar com sucesso", () => {
-    cy.login("papito@cyskills.com.br", "showtime");
-    cy.clickButtonLogin();
+    cy.doLogin()
 
     cy.get('[data-cy="welcome-text"]')
       .should("be.visible")
